@@ -1,0 +1,200 @@
+// Asosiy o'zgaruvchilar
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$dark-color: #2c3e50;
+$light-color: #ecf0f1;
+
+// Umumiy stil lar
+.statistika-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.statistika-title {
+  text-align: center;
+  color: $dark-color;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+  }
+}
+
+.statistika-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    
+    .tab-btn {
+      padding: 10px 20px;
+      background: $light-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      
+      &.active {
+        background: $primary-color;
+        color: white;
+      }
+      
+      &:hover:not(.active) {
+        background: darken($light-color, 5%);
+      }
+    }
+  }
+  
+  .time-range {
+    .time-select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background: white;
+      font-size: 1rem;
+    }
+  }
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba($primary-color, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+  }
+  
+  .stat-info {
+    h3 {
+      margin: 0 0 5px 0;
+      color: $dark-color;
+      font-size: 1.1rem;
+    }
+    
+    .stat-value {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $dark-color;
+    }
+    
+    .stat-trend {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      
+      &.up {
+        color: $secondary-color;
+      }
+      
+      &.down {
+        color: $accent-color;
+      }
+      
+      &.stable {
+        color: #f39c12;
+      }
+    }
+  }
+}
+
+.chart-container {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  
+  &.half-width {
+    width: 48%;
+    display: inline-block;
+    margin-right: 2%;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: $dark-color;
+}
+
+// Responsive dizayn
+@media (max-width: 768px) {
+  .statistika-controls {
+    flex-direction: column;
+    gap: 15px;
+    
+    .tabs {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .chart-container.half-width {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .statistika-title {
+    font-size: 2rem;
+  }
+}

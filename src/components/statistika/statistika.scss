@@ -1,0 +1,18 @@
+.statik_content{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    margin-top: 100px;
+    div{
+        border: 1px solid rgb(204, 204, 204);
+        padding: 30px 15px;
+        width: 30%;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: .3s;
+        &:hover{
+            color: #00a2ff;
+            border: 1px solid #00a2ff;
+        }
+    }
+}
