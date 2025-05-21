@@ -1,0 +1,278 @@
+// Asosiy o'zgaruvchilar
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$dark-color: #2c3e50;
+$light-color: #ecf0f1;
+$text-color: #333;
+$white: #fff;
+
+// Umumiy stil lar
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: $white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.signup-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  h1 {
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: lighten($text-color, 20%);
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+.progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  
+  .step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ddd;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    
+    &.active {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+  
+  .step-connector {
+    width: 60px;
+    height: 2px;
+    background: #ddd;
+    
+    &.active {
+      background: $primary-color;
+    }
+  }
+}
+
+.submit-error {
+  background: rgba($accent-color, 0.1);
+  color: $accent-color;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-left: 3px solid $accent-color;
+}
+
+.signup-form {
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $dark-color;
+      font-weight: 500;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+      
+      &.error {
+        border-color: $accent-color;
+      }
+    }
+    
+    .error-message {
+      display: block;
+      margin-top: 0.5rem;
+      color: $accent-color;
+      font-size: 0.85rem;
+    }
+    
+    .role-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+    }
+  }
+}
+
+.password-input {
+  position: relative;
+  
+  input {
+    padding-right: 2.5rem;
+  }
+}
+
+.password-requirements {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba($primary-color, 0.05);
+  border-radius: 5px;
+  
+  p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: $dark-color;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.85rem;
+    color: lighten($text-color, 20%);
+    
+    li {
+      margin-bottom: 0.3rem;
+      
+      &.valid {
+        color: $secondary-color;
+        position: relative;
+        
+        &::before {
+          content: '✓';
+          margin-left: -1.2rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.signup-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &.next, &.submit {
+    background: $primary-color;
+    color: $white;
+    
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+    
+    &:disabled {
+      background: lighten($primary-color, 20%);
+      cursor: not-allowed;
+    }
+  }
+  
+  &.back {
+    background: $light-color;
+    color: $text-color;
+    
+    &:hover {
+      background: darken($light-color, 10%);
+    }
+  }
+}
+
+.signup-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: lighten($text-color, 20%);
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.signup-background {
+  display: none;
+  position: relative;
+  width: 50%;
+  background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  
+  @media (min-width: 768px) {
+    display: block;
+  }
+  
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark-color, 0.6);
+  }
+}
+
+// Responsive dizayn
+@media (max-width: 767px) {
+  .signup-container {
+    flex-direction: column;
+  }
+  
+  .signup-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .signup-background {
+    display: none;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}

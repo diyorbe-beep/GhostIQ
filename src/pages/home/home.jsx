@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import imgs from "../../assets/index.js";
 import Statistika from '../../components/statistika/statistika.jsx';
 import UseStateChatr from '../../components/UserStatsChart/UserStatsChart.jsx';
-
+import Navbar from '../../components/navbar/navbar.jsx';
 
 const AnimatedNumber = ({ end }) => {
     const [count, setCount] = useState(0);
@@ -31,6 +31,7 @@ const Home = () => {
     return (
         <div>
             <div className="wrapper">
+                        <Navbar />
                 <div className="home_content">
                     <div className="home_left">
                         <h1>Fanlar bo'yicha <br /> test ishlang!</h1>

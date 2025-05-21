@@ -1,0 +1,203 @@
+// Asosiy o'zgaruvchilar
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$dark-color: #2c3e50;
+$light-color: #ecf0f1;
+$text-color: #333;
+$white: #fff;
+
+// Umumiy stil lar
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  background: $white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.login-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  h1 {
+    font-size: 2rem;
+    color: $dark-color;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: lighten($text-color, 20%);
+    margin: 0;
+  }
+}
+
+.auth-error {
+  background: rgba($accent-color, 0.1);
+  color: $accent-color;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-left: 3px solid $accent-color;
+}
+
+.login-form {
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $dark-color;
+      font-weight: 500;
+    }
+    
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+      
+      &.error {
+        border-color: $accent-color;
+      }
+    }
+    
+    .error-message {
+      display: block;
+      margin-top: 0.5rem;
+      color: $accent-color;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    
+    input {
+      margin-right: 0.5rem;
+    }
+    
+    label {
+      color: $text-color;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  }
+  
+  .forgot-password {
+    color: $primary-color;
+    font-size: 0.9rem;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+  
+  &:disabled {
+    background: lighten($primary-color, 20%);
+    cursor: not-allowed;
+  }
+}
+
+.login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: lighten($text-color, 20%);
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.login-background {
+  display: none;
+  position: relative;
+  width: 50%;
+  background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  
+  @media (min-width: 768px) {
+    display: block;
+  }
+  
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark-color, 0.6);
+  }
+}
+
+// Responsive dizayn
+@media (max-width: 767px) {
+  .login-container {
+    flex-direction: column;
+  }
+  
+  .login-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .login-background {
+    display: none;
+  }
+}
