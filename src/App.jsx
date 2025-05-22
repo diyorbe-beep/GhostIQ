@@ -7,6 +7,8 @@ import RainIcons from './components/RainningIcons/RainIcons';
 import Statistics from './pages/Statistika/statistika';
 import Login from './pages/login/login';
 import Signup from './pages/Signup/Signup';
+import Matematika from '../src/pages/test/Math/Math.jsx'
+import OnaTili from './pages/test/OnaTili/OnaTili';
 const App = () => {
   return (
     <div>
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/Statistics" element={<Statistics />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
+          <Route path="/Matematika" element={<Matematika />} />
+          <Route path="/OnaTili" element={<OnaTili />} />
         </Routes>
       </Router>
     </div>

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import "./sciences.scss";
 import imgs from "../../assets/index.js";
 import Navbar from '../../components/navbar/navbar.jsx';
+import { Link } from 'react-router-dom';
 
 const Sciences = () => {
     const [activeCard, setActiveCard] = useState(null);
 
     const SciencesCard = [
         { title: "Matematika", icon: imgs.Math },
-        { title: "Ona Tili", icon: imgs.onaTili },
+        { title: "OnaTili", icon: imgs.onaTili },
         { title: "Tarix", icon: imgs.history },
         { title: "Fizika", icon: imgs.Fizika },
         { title: "Kimyo", icon: imgs.chemistry },
@@ -60,22 +61,24 @@ const Sciences = () => {
 
                 <div className='sciences-grid'>
                     {SciencesCard.map((item, index) => (
-                        <div
-                            key={index}
-                            className={`sciences-card ${activeCard === index ? 'active' : ''}`}
-                            onClick={() => handleCardClick(index)}
-                            style={{ '--delay': `${index * 0.1}s` }}
-                        >
-                            <div className="card-inner">
-                                <img
-                                    src={item.icon}
-                                    alt={item.title}
-                                    className="card-icon"
-                                />
-                                <h2 className="card-title">{item.title}</h2>
-                                <div className="card-overlay"></div>
+                        <Link to={`/${item.title}`}>
+                            <div
+                                key={index}
+                                className={`sciences-card ${activeCard === index ? 'active' : ''}`}
+                                onClick={() => handleCardClick(index)}
+                                style={{ '--delay': `${index * 0.1}s` }}
+                            >
+                                <div className="card-inner">
+                                    <img
+                                        src={item.icon}
+                                        alt={item.title}
+                                        className="card-icon"
+                                    />
+                                    <h2 className="card-title">{item.title}</h2>
+                                    <div className="card-overlay"></div>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
