@@ -1,0 +1,50 @@
+.resNavbar {
+  position: absolute;
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.8s ease;
+  padding: 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  .nav_list {
+    display: flex;
+    gap: 25px;
+    li {
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      position: relative;
+      transition: 0.3s;
+      cursor: pointer;
+      @media (max-width: 550px) {
+        font-size: 16px;
+      }
+      &:hover {
+        color: #ffeb3b;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          height: 2px;
+          width: 100%;
+          background: #ffeb3b;
+        }
+      }
+    }
+  }
+    .nav_logo {
+    a {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      animation: bounceIn 1s ease;
+    }
+  }
+}

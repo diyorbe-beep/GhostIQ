@@ -7,32 +7,104 @@
   border-radius: 0 0 20px 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.8s ease;
+  /* From Uiverse.io by gagan-gv */
+  .btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    margin-left: 110px;
+    align-items: center;
+    background: transparent;
+    color: #f5f5f5;
+    display: none;
+    @media (max-width: 470px) {
+      display: flex;
+    }
+    @media (max-width: 460px) {
+      margin-left: 90px;
+    }
+    @media (max-width: 440px) {
+      margin-left: 75px;
+    }
+    @media (max-width: 420px) {
+      margin-left: 60px;
+    }
+    @media (max-width: 400px) {
+      margin-left: 40px;
+    }
+  }
 
+  .btn .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
+
+  .btn .text {
+    transform: translateX(55px);
+  }
+
+  .btn:hover .icon {
+    width: 175px;
+  }
+
+  .btn:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  .btn:focus {
+    outline: none;
+  }
+
+  .btn:active .icon {
+    transform: scale(0.85);
+  }
   .nav_logo {
     a {
       font-size: 32px;
       font-weight: 700;
       color: white;
       animation: bounceIn 1s ease;
+      @media (max-width: 550px) {
+        font-size: 24px;
+      }
     }
   }
 
   .nav_list {
     display: flex;
     gap: 25px;
-
+    @media (max-width: 510px) {
+      gap: 15px;
+    }
+    @media (max-width: 470px) {
+      display: none;
+    }
     li {
-      color: rgb(8, 8, 8);
+      color: rgb(255, 255, 255);
       font-size: 18px;
       position: relative;
-      transition: 0.3s ;
+      transition: 0.3s;
       cursor: pointer;
-
+      @media (max-width: 550px) {
+        font-size: 16px;
+      }
       &:hover {
         color: #ffeb3b;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: -5px;
@@ -57,7 +129,15 @@
 }
 
 @keyframes bounceIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  60% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
