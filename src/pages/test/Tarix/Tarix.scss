@@ -1,0 +1,168 @@
+// Asosiy o'zgaruvchilar
+$primary-color: #6a11cb;
+$secondary-color: #2575fc;
+$text-color: #333;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$border-radius: 8px;
+
+
+.ghostiq-container {
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  h1 {
+    color: $primary-color;
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
+
+// Sinf tanlash bo'limi
+.grade-selection {
+  text-align: center;
+  
+  h2 {
+    color: $secondary-color;
+    margin-bottom: 1.5rem;
+  }
+  
+  .grade-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    
+    .grade-btn {
+      padding: 1rem;
+      background-color: $light-color;
+      border: 2px solid $secondary-color;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $secondary-color;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: $secondary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.question-section {
+  .question-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    
+    .grade-info {
+      background-color: $warning-color;
+      color: $dark-color;
+      padding: 0.3rem 0.8rem;
+      border-radius: $border-radius;
+      font-weight: bold;
+    }
+    
+    .question-count {
+      color: $secondary-color;
+      font-weight: bold;
+    }
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+.options-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+
+  .option-btn {
+    padding: 0.8rem;
+    border: 2px solid #e9ecef;
+    border-radius: $border-radius;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #f1f3f5;
+      border-color: $secondary-color;
+    }
+
+    &.selected {
+      background-color: $secondary-color;
+      color: white;
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.next-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+  }
+}
+
+.score-section {
+  text-align: center;
+  h2 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.restart-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: $success-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($success-color, 10%);
+  }
+}

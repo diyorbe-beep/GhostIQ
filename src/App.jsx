@@ -9,6 +9,8 @@ import Login from './pages/login/login';
 import Signup from './pages/Signup/Signup';
 import Matematika from '../src/pages/test/Math/Math.jsx'
 import OnaTili from './pages/test/OnaTili/OnaTili';
+import Tarix from './pages/test/Tarix/Tarix';
+import Fizika from './pages/test/Fizika/Fizika';
 const App = () => {
   return (
     <div>
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Matematika" element={<Matematika />} />
           <Route path="/OnaTili" element={<OnaTili />} />
+          <Route path="/Tarix" element={<Tarix />} />
+          <Route path="/Fizika" element={<Fizika />} />
         </Routes>
       </Router>
     </div>
