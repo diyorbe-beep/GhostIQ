@@ -11,6 +11,8 @@ import Matematika from '../src/pages/test/Math/Math.jsx'
 import OnaTili from './pages/test/OnaTili/OnaTili';
 import Tarix from './pages/test/Tarix/Tarix';
 import Fizika from './pages/test/Fizika/Fizika';
+import Kimyo from './pages/test/Kimyo/kimyo';
+import Geometry from './pages/test/Geometry/geometry';
 const App = () => {
   return (
     <div>
@@ -27,6 +29,8 @@ const App = () => {
           <Route path="/OnaTili" element={<OnaTili />} />
           <Route path="/Tarix" element={<Tarix />} />
           <Route path="/Fizika" element={<Fizika />} />
+          <Route path="/Kimyo" element={<Kimyo />} />
+          <Route path="/Geometry" element={<Geometry />} />
         </Routes>
       </Router>
     </div>
